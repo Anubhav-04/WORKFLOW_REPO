@@ -1,0 +1,23 @@
+name: Sample node build
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v5
+            - name: Steup Node application
+              uses: actions/setup-node@v5
+              with:
+                node-version: 18
+            # Step 3
+            - name: Install Dependencties
+              run: npm install
+            # Step 4
+            - name: Run Tests
+              run: npm test
