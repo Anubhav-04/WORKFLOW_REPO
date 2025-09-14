@@ -1,0 +1,13 @@
+name: Basic CI Pipeline
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    builds:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Hello from CI Workflow"
+              run: echo "Hello from CI Workflows"  
